@@ -1,0 +1,41 @@
+
+
+<mat-card class="bg-dark text-white mb-4">
+    <mat-card-header>
+       <h2><strong> {{prodObj.pname}} </strong></h2>
+    </mat-card-header>
+   <mat-divider class="bg-light"></mat-divider>
+
+    <mat-card-content class="p-2">
+       <!-- <p class="text-capitalize pt-1"> the details of samsung galaxy is <strong> {{prodObj.pdetails}} </strong>
+       and this product Status is <strong> {{prodObj.pstatus}} </strong>
+    </p> -->
+
+    <p class="text-left pt-2">
+        The product name is <strong> {{prodObj.pname}} </strong> 
+        and its Status is <strong> {{prodObj.pstatus}} </strong> 
+        <br>
+        <strong>
+            Details : {{prodObj.pdetails}}
+        </strong>
+    </p>
+    </mat-card-content>
+
+    <mat-divider class="bg-light"></mat-divider>
+    <mat-card-actions>
+        <span class="d-flex justify-content-between">
+            <button class="btn-sm" mat-raised-button color="primary" 
+            (click)="onStatusUpdate(ProductsStatusEnum.InProgress)">
+                In Progress
+            </button>
+            <button class="btn-sm" mat-raised-button color="primary" 
+            (click)="onStatusUpdate(ProductsStatusEnum.Dispatched)">
+                Dispatched
+            </button>
+            <button class="btn-sm" mat-raised-button color="primary" 
+            (click)="onStatusUpdate(ProductsStatusEnum.Delivered)">
+                Delivered 
+            </button>
+        </span>
+    </mat-card-actions>
+</mat-card>

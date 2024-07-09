@@ -1,0 +1,39 @@
+
+<form #prodForm="ngForm" (ngSubmit)="onProdAdd()">
+    <mat-card class="border border-dark rounded-4">
+        <mat-card-header>
+            <h2>Products Forms</h2>
+        </mat-card-header>
+
+        <mat-divider class="bg-dark"></mat-divider>
+
+        <mat-card-content class="p-3">
+        
+            <mat-form-field class="example-full-width w-100" appearance="fill">
+                <mat-label>Enter Product Name</mat-label>
+                <input type="text" matInput  placeholder="Ex. Samsung Galxay"
+                #pname="ngModel" ngModel name="pname" id="pname" required>
+                <mat-error *ngIf="pname.touched && pname.hasError('required')">
+                   Please Enter Produts Name , its <strong>Required..</strong>
+                </mat-error>
+              </mat-form-field>
+           
+            <mat-form-field class="example-full-width w-100" appearance="fill">
+                <mat-label>Enter Product Details</mat-label>
+                <textarea type="text" matInput  placeholder="Ex. Details...." row="3"
+                #pdetails="ngModel" ngModel name="pdetails" id="pdetails" required>
+                </textarea>
+                <mat-error *ngIf="pdetails.touched && pdetails.hasError('required')">
+                   Please Enter Produts Details , its <strong>Required..</strong>
+                </mat-error>
+              </mat-form-field>
+           
+        </mat-card-content>
+
+        <mat-divider class="bg-dark"></mat-divider>
+
+        <mat-card-actions>
+            <button class="btn-sm btn-block" mat-raised-button color="accent">Add Product</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
